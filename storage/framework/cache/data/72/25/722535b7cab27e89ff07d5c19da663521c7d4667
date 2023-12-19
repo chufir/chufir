@@ -1,0 +1,13 @@
+9999999999s:639:"<div class="row x-gap-15 y-gap-15 items-center">
+                              <div class="col-auto md:d-none">
+                                <a href="#" class="text-12 text-white">+(1) 123 456 7890</a>
+                              </div>
+
+                              <div class="col-auto md:d-none">
+                                <div class="w-1 h-20 bg-white-20"></div>
+                              </div>
+
+                              <div class="col-auto">
+                                <a href="#" class="text-12 text-white">hi@gotrip.com</a>
+                              </div>
+                         </div>";
