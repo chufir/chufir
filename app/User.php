@@ -236,8 +236,8 @@
 
         public function sendPasswordResetNotification($token)
         {
-            // dd('samir');
-            Mail::to('maxsteel2020@gmail.com')->send(new ResetPasswordToken($token,$this));
+            dd(new ResetPasswordToken($token,$this));
+            Mail::to($this->email)->send(new ResetPasswordToken($token,$this));
         }
 
         public static function boot()
