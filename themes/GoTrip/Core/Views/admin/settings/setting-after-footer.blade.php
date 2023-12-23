@@ -81,7 +81,7 @@
                     </div>
                 </div>
                 <div class="g-items">
-                    @php $contents = setting_item('footer_content_right');@endphp
+                    @php $contents = setting_item_with_lang('footer_content_right',request()->query('lang'));@endphp
                     @if(!empty($contents))
                         @php $contents = json_decode($contents); @endphp
                         @foreach($contents as $k => $content)

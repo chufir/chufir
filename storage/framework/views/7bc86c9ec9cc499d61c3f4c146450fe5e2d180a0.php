@@ -81,10 +81,11 @@
                     </div>
                 </div>
                 <div class="g-items">
-                    <?php $contents = setting_item('footer_content_right');?>
+                    <?php $contents = setting_item_with_lang('footer_content_right',request()->query('lang'))?>
                     <?php if(!empty($contents)): ?>
                         <?php $contents = json_decode($contents); ?>
                         <?php $__currentLoopData = $contents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $k => $content): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        
                             <div class="item" data-number="<?php echo e($k); ?>">
                                 <div class="row">
                                     <div class="col-md-5">

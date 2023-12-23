@@ -4,6 +4,7 @@ public/dist/admin
 /public/hot
 /public/storage
 /public/uploads/0000
+storage/*
 /storage/*.key
 storage/app/*
 !storage/app/public/
