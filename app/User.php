@@ -236,7 +236,6 @@
 
         public function sendPasswordResetNotification($token)
         {
-            dd(new ResetPasswordToken($token,$this));
             Mail::to($this->email)->send(new ResetPasswordToken($token,$this));
         }
 
