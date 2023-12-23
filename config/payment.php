@@ -6,6 +6,6 @@ return [
         'stripe'=>Modules\Booking\Gateways\StripeGateway::class,
         'payrexx'=>Modules\Booking\Gateways\PayrexxGateway::class,
         'paystack'=>Modules\Booking\Gateways\PaystackGateway::class,
-        'myfatoorah'=>Modules\Booking\Gateways\MyfatoorahGateway::class,
+        'myfatoorah'=>Modules\Booking\Gateways\MyFatoorahGateway::class,
     ],
 ];
