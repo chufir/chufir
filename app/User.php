@@ -236,7 +236,7 @@
 
         public function sendPasswordResetNotification($token)
         {
-
+            dd('samir');
             Mail::to('maxsteel2020@gmail.com')->send(new ResetPasswordToken($token,$this));
         }
 
