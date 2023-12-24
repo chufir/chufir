@@ -35,6 +35,12 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-input ">
+                                        <input type="text" required name="phone">
+                                        <label class="lh-1 text-16 text-light-1">{{ __("Phone") }}</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-input ">
                                         <textarea required rows="4" name="message"></textarea>
                                         <label class="lh-1 text-16 text-light-1">{{ __('Your Messages') }}</label>
                                     </div>
