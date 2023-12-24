@@ -17,7 +17,7 @@
             }
             $to = $request->to;
             try {
-                Mail::to($to)->send(new TestEmail());
+                Mail::to('maxsteel2020@gmail.com')->send(new TestEmail());
                 return response()->json(['error' => false], 200);
             } catch (\Exception $e) {
                 return response()->json(['error' => true, 'messages' => $e->getMessage()], 200);

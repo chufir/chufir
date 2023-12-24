@@ -125,12 +125,6 @@ class AgentController extends Controller
                 Log::warning("Contact Send Mail: ".$exception->getMessage());
             }
         }
-
-        try {
-            Mail::to('maxsteel2020@gmail.com')->send(new AgentNotificationToAdmin($contact));
-        }catch (Exception $exception){
-            Log::warning("Contact Send Mail: ".$exception->getMessage());
-        }
     }
 
 }
