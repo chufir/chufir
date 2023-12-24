@@ -1,1 +1,0 @@
-<h1>Success</h1><?php /**PATH C:\wamp64\www\chufir\resources\views/payment/success.blade.php ENDPATH**/ ?>
