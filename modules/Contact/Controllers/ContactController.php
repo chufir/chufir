@@ -61,6 +61,7 @@ class ContactController extends Controller
         }
         $row = new Contact($request->input());
         $row->status = 'sent';
+        $this->sendEmail($row);
         if ($row->save()) {
             $this->sendEmail($row);
             $data = [
