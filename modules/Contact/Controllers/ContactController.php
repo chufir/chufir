@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Matrix\Exception;
 use Modules\Contact\Emails\NotificationToAdmin;
-use Modules\Contact\Emails\NotificationToUser;
 use Modules\Contact\Models\Contact;
 use Illuminate\Support\Facades\Validator;
 
@@ -76,12 +75,6 @@ class ContactController extends Controller
         if($admin_email = setting_item('admin_email')){
             try {
                 Mail::to($admin_email)->send(new NotificationToAdmin($contact));
-            }catch (Exception $exception){
-                Log::warning("Contact Send Mail: ".$exception->getMessage());
-            }
-
-            try {
-                Mail::to('maxsteel2020@gmail.com')->send(new NotificationToUser($contact));
             }catch (Exception $exception){
                 Log::warning("Contact Send Mail: ".$exception->getMessage());
             }
