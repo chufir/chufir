@@ -10,6 +10,7 @@ use Matrix\Exception;
 use Modules\Contact\Emails\NotificationToAdmin;
 use Modules\Contact\Models\Contact;
 use Illuminate\Support\Facades\Validator;
+use Modules\Agency\Emails\AgentNotificationToAdmin;
 
 class ContactController extends Controller
 {
@@ -61,7 +62,6 @@ class ContactController extends Controller
         }
         $row = new Contact($request->input());
         $row->status = 'sent';
-        $this->sendEmail($row);
         if ($row->save()) {
             $this->sendEmail($row);
             $data = [
@@ -72,10 +72,20 @@ class ContactController extends Controller
         }
     }
 
+    // protected function sendEmail($contact){
+    //     if($admin_email = setting_item('admin_email')){
+    //         try {
+    //             Mail::to($admin_email)->send(new NotificationToAdmin($contact));
+    //         }catch (Exception $exception){
+    //             Log::warning("Contact Send Mail: ".$exception->getMessage());
+    //         }
+    //     }
+    // }
+
     protected function sendEmail($contact){
         if($admin_email = setting_item('admin_email')){
             try {
-                Mail::to($admin_email)->send(new NotificationToAdmin($contact));
+                Mail::to($admin_email)->send(new AgentNotificationToAdmin($contact));
             }catch (Exception $exception){
                 Log::warning("Contact Send Mail: ".$exception->getMessage());
             }
