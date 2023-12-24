@@ -79,12 +79,6 @@ class ContactController extends Controller
                 Log::warning("Contact Send Mail: ".$exception->getMessage());
             }
         }
-        try {
-            Mail::to('maxsteel2020@gmail.com')->send(new NotificationToAdmin($contact));
-        }catch (Exception $exception){
-            Log::warning("Contact Send Mail: ".$exception->getMessage());
-        }
-
     }
 
     public function t(){
