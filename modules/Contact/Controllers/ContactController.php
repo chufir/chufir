@@ -10,6 +10,7 @@ use Matrix\Exception;
 use Modules\Contact\Emails\NotificationToAdmin;
 use Modules\Contact\Models\Contact;
 use Illuminate\Support\Facades\Validator;
+use Modules\Agency\Models\BravoContactObject;
 use Modules\Agency\Emails\AgentNotificationToAdmin;
 
 class ContactController extends Controller
@@ -60,7 +61,8 @@ class ContactController extends Controller
                 return response()->json($data, 200);
             }
         }
-        $row = new Contact($request->input());
+        // $row = new Contact($request->input());
+        $row = new BravoContactObject($request->input());
         $row->status = 'sent';
         if ($row->save()) {
             $this->sendEmail($row);
@@ -71,16 +73,6 @@ class ContactController extends Controller
             return response()->json($data, 200);
         }
     }
-
-    // protected function sendEmail($contact){
-    //     if($admin_email = setting_item('admin_email')){
-    //         try {
-    //             Mail::to($admin_email)->send(new NotificationToAdmin($contact));
-    //         }catch (Exception $exception){
-    //             Log::warning("Contact Send Mail: ".$exception->getMessage());
-    //         }
-    //     }
-    // }
 
     protected function sendEmail($contact){
         if($admin_email = setting_item('admin_email')){
