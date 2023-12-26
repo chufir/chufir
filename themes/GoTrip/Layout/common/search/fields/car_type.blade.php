@@ -26,6 +26,8 @@ $type = $search_style ?? 'normal';
                     <option value="{{ $value }}" @if($selectedValue == $value) selected @endif>{{ $label }}</option>
                 @endforeach
             </select>
+
+            
         </div>
     </div>
 </div>
