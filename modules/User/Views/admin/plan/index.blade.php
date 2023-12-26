@@ -46,7 +46,7 @@
                 <div class="panel">
                     <div class="panel-body">
                         <form class="bravo-form-item">
-                            <table class="table table-bordered table-striped">
+                            <table class="table table-bordered table-striped table-booking-history">
                                 <thead>
                                 <tr>
                                     <th width="60px"><input type="checkbox" class="check-all"></th>
