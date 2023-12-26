@@ -50,8 +50,14 @@
                             @case ('location')
                                 @include('Layout::common.search.fields.location')
                                 @break
+                            @case ('destination')
+                                @include('Layout::common.search.fields.destination')
+                                @break
                             @case ('date')
                                 @include('Layout::common.search.fields.date')
+                                @break
+                            @case ('car_type')
+                                @include('Layout::common.search.fields.car_type')
                                 @break
                             @case ('attr')
                                 @include('Layout::common.search.fields.attr')
