@@ -26,7 +26,9 @@
                 <div class="row">
                     <div class="col-md-9">
                         @include('Car::admin.car.content')
+                        @include('Car::admin.car.car_type')
                         @include('Car::admin.car.location')
+                        @include('Car::admin.car.destination')
                         @include('Car::admin.car.pricing')
                         @if(is_default_lang())
                             {{--@include('Car::admin.car.availability')--}}

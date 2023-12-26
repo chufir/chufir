@@ -205,6 +205,7 @@ class CarController extends AdminController
         $dataKeys = [
             'title',
             'content',
+            'car_type',
             'price',
             'is_instant',
             'status',
@@ -214,6 +215,7 @@ class CarController extends AdminController
             'banner_image_id',
             'gallery',
             'location_id',
+            'destination_id',
             'address',
             'map_lat',
             'map_lng',
