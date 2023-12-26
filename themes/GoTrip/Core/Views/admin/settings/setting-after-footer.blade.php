@@ -1,15 +1,15 @@
 <div class="form-group">
     <label>{{__("Footer Style")}}</label>
     <select name="footer_style" class="form-control">
-        <option value="normal" @if(setting_item('footer_style') == 'normal') selected @endif>{{ __('Normal') }}</option>
-        <option value="style_1" @if(setting_item('footer_style') == 'style_1') selected @endif>{{ __('Style 1') }}</option>
-        <option value="style_2" @if(setting_item('footer_style') == 'style_2') selected @endif>{{ __('Style 2') }}</option>
-        <option value="style_3" @if(setting_item('footer_style') == 'style_3') selected @endif>{{ __('Style 3') }}</option>
-        <option value="style_4" @if(setting_item('footer_style') == 'style_4') selected @endif>{{ __('Style 4') }}</option>
-        <option value="style_5" @if(setting_item('footer_style') == 'style_5') selected @endif>{{ __('Style 5') }}</option>
-        <option value="style_6" @if(setting_item('footer_style') == 'style_6') selected @endif>{{ __('Style 6') }}</option>
-        <option value="style_7" @if(setting_item('footer_style') == 'style_7') selected @endif>{{ __('Style 7') }}</option>
-        <option value="style_8" @if(setting_item('footer_style') == 'style_8') selected @endif>{{ __('Style 8') }}</option>
+        <option value="normal" @if(setting_item_with_lang('footer_style') == 'normal') selected @endif>{{ __('Normal') }}</option>
+        <option value="style_1" @if(setting_item_with_lang('footer_style') == 'style_1') selected @endif>{{ __('Style 1') }}</option>
+        <option value="style_2" @if(setting_item_with_lang('footer_style') == 'style_2') selected @endif>{{ __('Style 2') }}</option>
+        <option value="style_3" @if(setting_item_with_lang('footer_style') == 'style_3') selected @endif>{{ __('Style 3') }}</option>
+        <option value="style_4" @if(setting_item_with_lang('footer_style') == 'style_4') selected @endif>{{ __('Style 4') }}</option>
+        <option value="style_5" @if(setting_item_with_lang('footer_style') == 'style_5') selected @endif>{{ __('Style 5') }}</option>
+        <option value="style_6" @if(setting_item_with_lang('footer_style') == 'style_6') selected @endif>{{ __('Style 6') }}</option>
+        <option value="style_7" @if(setting_item_with_lang('footer_style') == 'style_7') selected @endif>{{ __('Style 7') }}</option>
+        <option value="style_8" @if(setting_item_with_lang('footer_style') == 'style_8') selected @endif>{{ __('Style 8') }}</option>
     </select>
 </div>
 
@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="g-items">
-                    @php $contents = setting_item('footer_content_left');@endphp
+                    @php $contents = setting_item_with_lang('footer_content_left');@endphp
                     @if(!empty($contents))
                         @php $contents = json_decode($contents); @endphp
                         @foreach($contents as $k => $content)
