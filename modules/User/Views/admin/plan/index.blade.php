@@ -36,6 +36,9 @@
                             </form>
                         @endif
                     </div>
+                    
+
+                    
                     <div class="col-left">
                         <form method="get" action="" class="filter-form filter-form-right d-flex justify-content-end" role="search">
                             <input type="text" name="s" value="{{ Request()->s }}" class="form-control" placeholder="{{__("Search by name")}}">
