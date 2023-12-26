@@ -21,9 +21,7 @@
                             $types = [
                                 'service_name'=>__("Service name"),
                                 'location'=>__("Location"),
-                                'destination'=>__("Destination"),
                                 'date'=>__("Date"),
-                                'car_type'=>__("Car Type"),
                                 'attr'=>__("Attribute"),
                             ];
                             $attrs = \Modules\Core\Models\Attributes::where('service', 'car')->get();
