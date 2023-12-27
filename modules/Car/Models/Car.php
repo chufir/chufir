@@ -1016,4 +1016,11 @@ class Car extends Bookable
         }
         return $search_fields;
     }
+
+    public function destination()
+    {
+        return $this->belongsTo(Location::class);
+    }
+
+
 }

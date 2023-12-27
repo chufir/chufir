@@ -64,6 +64,8 @@
                             <th>{{__('Customer')}}</th>
 
                             <th>{{__('Payment Information')}}</th>
+                            <th>{{__('From')}}</th>
+                            <th>{{__('To')}}</th>
                             <th  width="80px" >{{__('Commission')}}</th>
                             <th width="80px">{{__('Status')}}</th>
                             <th width="150px">{{__('Payment Method')}}</th>
@@ -102,6 +104,24 @@
                                 <td>{{__("Total")}} : {{format_money_main($row->total)}}<br/>
                                     {{__("Paid")}} : {{format_money_main($row->paid)}}<br/>
                                     {{__("Remain")}} : {{format_money_main($booking->total - $booking->paid)}}<br/>
+                                </td>
+                                <td>
+
+                                    @if($service = $row->service)
+                                    {{$service->location->name ?? ''}}
+
+                                @else
+                                    {{__("[Deleted]")}}
+                                @endif
+
+                                </td>
+                                <td>
+                                    @if($service = $row->service)
+                                    {{$service->destination->name ?? ''}}
+
+                                @else
+                                    {{__("[Deleted]")}}
+                                @endif
                                 </td>
                                 <td>
                                     {{format_money_main($booking->commission)}}

@@ -30,76 +30,130 @@ class CarController extends Controller
     public function index(Request $request)
     {
 
-        $layout = setting_item("car_layout_search", 'normal');
-        if ($request->query('_layout')) {
-            $layout = $request->query('_layout');
-        }
-        $is_ajax = $request->query('_ajax');
-        $for_map = $request->query('_map',$layout === 'map');
+        // $layout = setting_item("car_layout_search", 'normal');
+        // if ($request->query('_layout')) {
+        //     $layout = $request->query('_layout');
+        // }
+        // $is_ajax = $request->query('_ajax');
+        // $for_map = $request->query('_map',$layout === 'map');
 
-        if(!empty($request->query('limit'))){
-            $limit = $request->query('limit');
-        }else{
-            $limit = !empty(setting_item("car_page_limit_item"))? setting_item("car_page_limit_item") : 9;
+        // if(!empty($request->query('limit'))){
+        //     $limit = $request->query('limit');
+        // }else{
+        //     $limit = !empty(setting_item("car_page_limit_item"))? setting_item("car_page_limit_item") : 9;
 
-        }
-        $query = $this->carClass->search($request->input());
-        $list = $query->paginate($limit);
-        $markers = [];
-        if (!empty($list) and $for_map) {
-            foreach ($list as $row) {
-                $markers[] = [
-                    "id"      => $row->id,
-                    "title"   => $row->title,
-                    "lat"     => (float)$row->map_lat,
-                    "lng"     => (float)$row->map_lng,
-                    "gallery" => $row->getGallery(true),
-                    "infobox" => view('Car::frontend.layouts.search.loop-grid', ['row' => $row,'disable_lazyload'=>1,'wrap_class'=>'infobox-item'])->render(),
-                    'marker' => get_file_url(setting_item("car_icon_marker_map"),'full') ?? url('images/icons/png/pin.png'),
-                ];
+        // }
+        // $query = $this->carClass->search($request->input());
+        // $list = $query->paginate($limit);
+        // $markers = [];
+        // if (!empty($list) and $for_map) {
+        //     foreach ($list as $row) {
+        //         $markers[] = [
+        //             "id"      => $row->id,
+        //             "title"   => $row->title,
+        //             "lat"     => (float)$row->map_lat,
+        //             "lng"     => (float)$row->map_lng,
+        //             "gallery" => $row->getGallery(true),
+        //             "infobox" => view('Car::frontend.layouts.search.loop-grid', ['row' => $row,'disable_lazyload'=>1,'wrap_class'=>'infobox-item'])->render(),
+        //             'marker' => get_file_url(setting_item("car_icon_marker_map"),'full') ?? url('images/icons/png/pin.png'),
+        //         ];
+        //     }
+        // }
+        // $limit_location = 15;
+        // if( empty(setting_item("car_location_search_style")) or setting_item("car_location_search_style") == "normal" ){
+        //     $limit_location = 1000;
+        // }
+        // $data = [
+        //     'rows' => $list,
+        //     'layout'=>$layout
+        // ];
+        // if ($is_ajax) {
+        //     return $this->sendSuccess([
+        //         "markers" => $markers,
+        //         'fragments'=>[
+        //             '.ajax-search-result'=>view('Car::frontend.ajax.search-result'.($for_map ? '-map' : ''), $data)->render(),
+        //             '.result-count'=>$list->total() ? ($list->total() > 1 ? __(":count cars found",['count'=>$list->total()]) : __(":count car found",['count'=>$list->total()])) : '',
+        //             '.count-string'=> $list->total() ? __("Showing :from - :to of :total Cars",["from"=>$list->firstItem(),"to"=>$list->lastItem(),"total"=>$list->total()]) : ''
+        //         ]
+        //     ]);
+        // }
+        // $data = [
+        //     'rows'               => $list,
+        //     'list_location'      => $this->locationClass::where('status', 'publish')->limit($limit_location)->with(['translation'])->get()->toTree(),
+        //     'car_min_max_price' => $this->carClass::getMinMaxPrice(),
+        //     'markers'            => $markers,
+        //     "blank" => setting_item('search_open_tab') == "current_tab" ? 0 : 1 ,
+        //     "seo_meta"           => $this->carClass::getSeoMetaForPageList()
+        // ];
+        // $data['layout'] = $layout;
+        // $data['attributes'] = Attributes::where('service', 'car')->orderBy("position","desc")->with(['terms'=>function($query){
+        //     $query->withCount('car');
+        // },'translation'])->get();
+
+        // if ($layout == "map") {
+        //     $data['body_class'] = 'has-search-map';
+        //     $data['html_class'] = 'full-page';
+        //     return view('Car::frontend.search-map', $data);
+        // }
+        // return view('Car::frontend.search', $data);
+
+
+        $row = $this->carClass::with(['location', 'translation', 'hasWishList'])
+
+        // ->select('location_id', 'destination_id', 'start_date', 'end_date', 'car_type')
+        ->where('location_id', $request->input('location_id'))
+        ->where('destination_id', $request->input('destination_id'))
+        ->where('car_type', $request->input('car_type'))
+        ->first();
+        // dd($row);
+
+        if ($row) {
+            $translation = $row->translate();
+            $car_related = [];
+            $location_id = $row->location_id;
+
+            if (!empty($location_id)) {
+                $car_related = $this->carClass::where('location_id', $location_id)
+                    ->where("status", "publish")
+                    ->take(4)
+                    ->whereNotIn('id', [$row->id])
+                    ->with(['location', 'translation', 'hasWishList'])
+                    ->get();
             }
-        }
-        $limit_location = 15;
-        if( empty(setting_item("car_location_search_style")) or setting_item("car_location_search_style") == "normal" ){
-            $limit_location = 1000;
-        }
-        $data = [
-            'rows' => $list,
-            'layout'=>$layout
-        ];
-        if ($is_ajax) {
-            return $this->sendSuccess([
-                "markers" => $markers,
-                'fragments'=>[
-                    '.ajax-search-result'=>view('Car::frontend.ajax.search-result'.($for_map ? '-map' : ''), $data)->render(),
-                    '.result-count'=>$list->total() ? ($list->total() > 1 ? __(":count cars found",['count'=>$list->total()]) : __(":count car found",['count'=>$list->total()])) : '',
-                    '.count-string'=> $list->total() ? __("Showing :from - :to of :total Cars",["from"=>$list->firstItem(),"to"=>$list->lastItem(),"total"=>$list->total()]) : ''
-                ]
-            ]);
-        }
-        $data = [
-            'rows'               => $list,
-            'list_location'      => $this->locationClass::where('status', 'publish')->limit($limit_location)->with(['translation'])->get()->toTree(),
-            'car_min_max_price' => $this->carClass::getMinMaxPrice(),
-            'markers'            => $markers,
-            "blank" => setting_item('search_open_tab') == "current_tab" ? 0 : 1 ,
-            "seo_meta"           => $this->carClass::getSeoMetaForPageList()
-        ];
-        $data['layout'] = $layout;
-        $data['attributes'] = Attributes::where('service', 'car')->orderBy("position","desc")->with(['terms'=>function($query){
-            $query->withCount('car');
-        },'translation'])->get();
 
-        if ($layout == "map") {
-            $data['body_class'] = 'has-search-map';
-            $data['html_class'] = 'full-page';
-            return view('Car::frontend.search-map', $data);
+            $review_list = $row->getReviewList();
+            $data = [
+                'row'          => $row,
+                'translation'  => $translation,
+                'car_related'  => $car_related,
+                'booking_data' => $row->getBookingData(),
+                'body_class'   => 'is_single',
+                'breadcrumbs'  => [
+                    [
+                        'name' => __('Car'),
+                        'url'  => route('car.search'),
+                    ],
+                ],
+            ];
+
+            $data['breadcrumbs'][] = [
+                'name'  => $translation->title,
+                'class' => 'active',
+            ];
+
+            $this->setActiveMenu($row);
+
+            return view('Car::frontend.detail', $data);
+        } else {
+            // Handle the case when $row is null, for example, redirect to an error page or show a message.
+            return view('Car::frontend.detail')->with('error', 'No car found with this location and destination.');
         }
-        return view('Car::frontend.search', $data);
+
     }
 
-    public function detail(Request $request, $slug)
+    public function detail(Request $request, $slug = null)
     {
+        // dd('detail mehod');
         $row = $this->carClass::where('slug', $slug)->with(['location','translation','hasWishList'])->first();;
         if ( empty($row) or !$row->hasPermissionDetailView()) {
             return redirect('/');

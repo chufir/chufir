@@ -3,7 +3,7 @@ use \Illuminate\Support\Facades\Route;
 
 Route::group(['prefix'=>config('car.car_route_prefix')],function(){
     Route::get('/','CarController@index')->name('car.search'); // Search
-    Route::get('/{slug}','CarController@detail')->name('car.detail');// Detail
+    Route::get('/{slug?}','CarController@detail')->name('car.detail');// Detail
 });
 
 Route::group(['prefix'=>'user/'.config('car.car_route_prefix'),'middleware' => ['auth','verified']],function(){

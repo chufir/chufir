@@ -63,6 +63,7 @@
                             <th width="60px"><input type="checkbox" class="check-all"></th>
                             <th> {{ __('Name')}}</th>
                             <th width="200px"> {{ __('Location')}}</th>
+                            <th width="200px"> {{ __('Destination')}}</th>
                             <th width="130px"> {{ __('Author')}}</th>
                             <th width="100px"> {{ __('Status')}}</th>
                             <th width="100px"> {{ __('Reviews')}}</th>
@@ -83,6 +84,7 @@
                                         <a href="{{route('car.admin.edit',['id'=>$row->id])}}">{{$row->title}}</a>
                                     </td>
                                     <td>{{$row->location->name ?? ''}}</td>
+                                    <td>{{$row->destination->name ?? ''}}</td>
                                     <td>
                                         @if(!empty($row->author))
                                             {{$row->author->getDisplayName()}}

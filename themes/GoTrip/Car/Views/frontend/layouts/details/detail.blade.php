@@ -1,20 +1,27 @@
 <section class="pt-40">
     <div class="container">
+        @if(isset($row))
+
         <div class="row y-gap-30">
             <div class="col-lg-8">
                 <div class="row y-gap-20 justify-between items-end">
                     <div class="col-auto">
-                        <h1 class="text-30 sm:text-24 fw-600">{{$translation->title}}</h1>
-                        <div class="row x-gap-10 items-center pt-10">
+                        {{-- <h1 class="text-30 sm:text-24 fw-600">{{$translation->title}}</h1> --}}
+                        <h6>Location: {{ $row->location->name }}</h6>
+                        <h6>Destination: {{ $row->destination->name ?? 'No Destination' }}</h6>
+
+                        <h1 class="text-30 sm:text-24 fw-600">The car will be similar like this:</h1>
+                        <h6>Car Type: <span style="text-transform: uppercase;">{{ $row->car_type }}</span></h6>
+                        {{-- <div class="row x-gap-10 items-center pt-10">
                             <div class="col-auto">
                                 <div class="d-flex x-gap-5 items-center">
                                     <i class="icon-location text-16 text-light-1"></i>
                                     <div class="text-15 text-light-1">{{$translation->address}}</div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
-                    <div class="col-auto">
+                     {{-- <div class="col-auto">
                         <div class="row x-gap-10 y-gap-10">
                             <div class="col-auto">
                                 <div class="dropdown">
@@ -41,7 +48,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 @if($row->getGallery())
                     <div class="mt-20">
@@ -60,7 +67,7 @@
 </section>
 <section class="pt-40">
     <div class="container">
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-lg-8">
                 <div>
                     <h3 class="text-22 fw-500">
@@ -112,35 +119,38 @@
                 @include('Car::frontend.layouts.details.attributes')
                 <div class="border-top-light mt-40"></div>
             </div>
-        </div>
+        </div> --}}
+        @else
+            <h2>No car found.</h2>
+        @endif
     </div>
 </section>
 
-@if($row->map_lat && $row->map_lng)
+{{-- @if($row->map_lat && $row->map_lng)
     <section class="mt-40">
         @include('Layout::map.detail.map')
     </section>
-@endif
+@endif --}}
 <div class="mt-40"></div>
-<section>
+{{-- <section>
     <div class="container">
         @if($translation->faqs)
             @include('Layout::common.detail.faq2',['faqs'=>$translation->faqs])
         @endif
     </div>
-</section>
+</section> --}}
 <div class="container mt-40 mb-40">
-    <div class="border-top-light"></div>
+    {{-- <div class="border-top-light"></div>
 </div>
 <section>
     <div class="container">
         @include('Layout::common.detail.review')
     </div>
-</section>
+</section> --}}
 <div class="mt-40"></div>
 
-<div class="container">
+{{-- <div class="container">
     @include('Car::frontend.layouts.details.related')
-</div>
+</div> --}}
 
 <div class="layout-pt-lg"></div>

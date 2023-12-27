@@ -11,12 +11,37 @@
                         <input type="number" step="any" min="0" name="number" class="form-control" value="{{$row->number}}" placeholder="{{__("Car Number")}}">
                     </div>
                 </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <!-- Add these lines where you want to display the selected location data -->
+                        <div style="display: none"><strong>Selected Location Map Latitude :</strong> <span id="selectedLocationMapLatInPricing"></span></div>
+                        <div style="display: none"><strong>Selected Location Map Longitude :</strong> <span id="selectedLocationMapLngInPricing"></span></div>
+
+                                                <!-- Add these lines where you want to display the selected destination data -->
+                        <div style="display: none"><strong>Selected Destination Map Latitude :</strong> <span id="selectedDestinationMapLatInPricing"></span></div>
+                        <div style="display: none"><strong>Selected Destination Map Longitude :</strong> <span id="selectedDestinationMapLngInPricing"></span></div>
+
+                        <div><strong>Distance:</strong> <span id="distanceDisplay"></span></div>
+                    </div>
+                </div>
+
+                <!-- Add this new field where you want to display the Price per km -->
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="control-label">{{__("Price per km")}}</label>
+                        <input id='price_per_km' type="number" step="any" min="0" name="price_per_km" class="form-control" value="{{$row->price_per_km ?? 0}}" placeholder="{{__("Price per km")}}">
+                    </div>
+                </div>
+
+
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label class="control-label">{{__("Price")}}</label>
-                        <input type="number" step="any" min="0" name="price" class="form-control" value="{{$row->price}}" placeholder="{{__("Car Price")}}">
+                        <input id="fullPrice" type="number" step="any" min="0" name="price" class="form-control" value="{{$row->price ?? 0}}" placeholder="{{__("Car Price")}}">
                     </div>
                 </div>
+
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label class="control-label">{{__("Sale Price")}}</label>
@@ -246,3 +271,5 @@
 </div>
 @endif
 <?php do_action(\Modules\Car\Hook::FORM_AFTER_SERVICE_FEE,$row) ?>
+
+
