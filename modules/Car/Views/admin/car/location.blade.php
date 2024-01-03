@@ -57,10 +57,10 @@
                                     ?>
                                 </select>
                                 <div style="display: none">
-                                    <div style="display: none"><strong>Selected Location:</strong> <span id="selectedLocationDiv"></span></div>
-                                    <div style="display: none"><strong>Selected Location ID:</strong> <span id="selectedLocationIdDiv"></span></div>
-                                    <div style="display: none"><strong>Selected Map Latitude:</strong> <span id="selectedMapLatDiv"></span></div>
-                                    <div style="display: none"><strong>Selected Map Longitude:</strong> <span id="selectedMapLngDiv"></span></div>
+                                    <div ><strong>Selected Location:</strong> <span id="selectedLocationDiv"></span></div>
+                                    <div ><strong>Selected Location ID:</strong> <span id="selectedLocationIdDiv"></span></div>
+                                    <div ><strong>Selected Map Latitude:</strong> <span id="selectedMapLatDiv"></span></div>
+                                    <div ><strong>Selected Map Longitude:</strong> <span id="selectedMapLngDiv"></span></div>
                                 </div>
                             </div>
                         </div>
@@ -93,17 +93,17 @@
                             ?>
                         </select>
                         <div style="display: none">
-                            <div style="display: none"><strong>Selected Location:</strong> <span id="selectedLocationDiv"></span></div>
-                            <div style="display: none"><strong>Selected Location ID:</strong> <span id="selectedLocationIdDiv"></span></div>
-                            <div style="display: none"><strong>Selected Map Latitude:</strong> <span id="selectedMapLatDiv"></span></div>
-                            <div style="display: none"><strong>Selected Map Longitude:</strong> <span id="selectedMapLngDiv"></span></div>
+                            <div><strong>Selected Location:</strong> <span id="selectedLocationDiv"></span></div>
+                            <div><strong>Selected Location ID:</strong> <span id="selectedLocationIdDiv"></span></div>
+                            <div><strong>Selected Map Latitude:</strong> <span id="selectedMapLatDiv"></span></div>
+                            <div><strong>Selected Map Longitude:</strong> <span id="selectedMapLngDiv"></span></div>
                         </div>
                     </div>
                 @endif
             </div>
         @endif
 
-        <div style="display: none" class="form-group">
+        {{-- <div style="display: none" class="form-group">
             <label class="control-label">{{__("Real address")}}</label>
             <input type="text" name="address" id="customPlaceAddress" class="form-control" placeholder="{{__("Real address")}}" value="{{$translation->address}}">
         </div>
@@ -129,7 +129,7 @@
                     </div>
                 </div>
             </div>
-        @endif
+        @endif --}}
     </div>
 </div>
 

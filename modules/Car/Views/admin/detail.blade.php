@@ -280,6 +280,7 @@
         var cost = distance * pricePerKm;
 
         return { distance: distance, cost: cost };
+
     }
 
     // Function to update the distance and cost in the HTML elements

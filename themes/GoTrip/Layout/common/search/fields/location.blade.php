@@ -18,17 +18,21 @@ if (empty($inputName)){
     $inputName = 'location_id';
 }
 $type = $search_style ?? "normal";
+// $type = "autocomplete";
 ?>
 <div class="searchMenu-loc js-form-dd js-liverSearch item">
     <span class="clear-loc absolute bottom-0 text-12"><i class="icon-close"></i></span>
     <div data-x-dd-click="searchMenu-loc">
         <h4 class="text-15 fw-500 ls-2 lh-16">{{ $field['title'] }}</h4>
-        <div class="text-15 text-light-1 ls-2 lh-16  @if( $type == "autocomplete") smart-search  @endif ">
-            <input type="hidden" name="{{$inputName}}" class="js-search-get-id" value="{{ $location_id ?? '' }}">
-            <input type="text" autocomplete="off" @if( $type == "normal") readonly  @endif class="smart-search-location parent_text js-search js-dd-focus" placeholder="{{__("Where are you going?")}}" value="{{ $location_name }}" data-onLoad="{{__("Loading...")}}" data-default="{{ json_encode($list_json) }}">
+        <div class="text-15 text-light-1 ls-2 lh-16 @if( $type == "autocomplete") smart-search  @endif ">
+            <input type="hidden" name="{{ $inputName }}" class="js-search-get-id" value="{{ $location_id ?? '' }}">
+            <input type="text" autocomplete="on"
+             {{-- @if( $type == "normal") readonly  @endif --}}
+             class="smart-search-location parent_text js-search js-dd-focus" placeholder="{{__("Where are you going?")}}" value="{{ $location_name }}" data-onLoad="{{__("Loading...")}}" data-default="{{ json_encode($list_json) }}">
         </div>
     </div>
-    <div class="searchMenu-loc__field shadow-2 js-popup-window @if($type!='normal') d-none @endif" data-x-dd="searchMenu-loc" data-x-dd-toggle="-is-active">
+    <div class="searchMenu-loc__field shadow-2 js-popup-window  @if($type!='normal') d-none @endif" style="max-height: 300px;
+    overflow-y: scroll;" data-x-dd="searchMenu-loc" data-x-dd-toggle="-is-active">
         <div class="bg-white px-30 py-30 sm:px-0 sm:py-15 rounded-4">
             <div class="y-gap-5 js-results">
                 @foreach($list_json as $location)

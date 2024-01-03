@@ -147,7 +147,10 @@
                         $("input[name=map_zoom]").attr("value", zoom);
                     })
                 }
+
             });
         })
     </script>
 @endpush
+
+

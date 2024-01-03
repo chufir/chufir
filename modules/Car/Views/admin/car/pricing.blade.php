@@ -13,17 +13,17 @@
                 </div>
 
                 <div class="col-lg-12">
-                    <div class="form-group">
+                    <div class="form-group" style="display: none">
                         <!-- Add these lines where you want to display the selected location data -->
-                        <div style="display: none"><strong>Selected Location Map Latitude :</strong> <span id="selectedLocationMapLatInPricing"></span></div>
-                        <div style="display: none"><strong>Selected Location Map Longitude :</strong> <span id="selectedLocationMapLngInPricing"></span></div>
+                        <div><strong>Selected Location Map Latitude :</strong> <span id="selectedLocationMapLatInPricing"></span></div>
+                        <div><strong>Selected Location Map Longitude :</strong> <span id="selectedLocationMapLngInPricing"></span></div>
 
                                                 <!-- Add these lines where you want to display the selected destination data -->
-                        <div style="display: none"><strong>Selected Destination Map Latitude :</strong> <span id="selectedDestinationMapLatInPricing"></span></div>
-                        <div style="display: none"><strong>Selected Destination Map Longitude :</strong> <span id="selectedDestinationMapLngInPricing"></span></div>
+                        <div><strong>Selected Destination Map Latitude :</strong> <span id="selectedDestinationMapLatInPricing"></span></div>
+                        <div><strong>Selected Destination Map Longitude :</strong> <span id="selectedDestinationMapLngInPricing"></span></div>
 
-                        <div><strong>Distance:</strong> <span id="distanceDisplay"></span></div>
                     </div>
+                    <div><strong>Distance:</strong> <span id="distanceDisplay"></span></div>
                 </div>
 
                 <!-- Add this new field where you want to display the Price per km -->

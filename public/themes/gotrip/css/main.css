@@ -12059,3 +12059,144 @@ table.table-5 td {
         display: none;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .custom-select-container .custom-select {
+    position: relative;
+    width: 100%;
+    margin-right: 0;
+}
+
+.custom-select-container .custom-select ul {
+    top: calc(100% + 1rem);
+}
+
+.custom-select-container .custom-select summary {
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    list-style: none;
+}
+
+.custom-select-container .custom-select summary::after {
+    content: '';
+    display: inline-block;
+    float: right;
+    width: .5rem;
+    height: .5rem;
+    border-bottom: 1px solid currentColor;
+    border-left: 1px solid currentColor;
+    border-bottom-left-radius: 2px;
+    transform: rotate(45deg) translate(50%, 0%);
+    transform-origin: center center;
+    transition: transform ease-in-out 100ms;
+}
+
+.custom-select-container .custom-select summary:focus {
+    outline: none;
+}
+
+.custom-select-container .custom-select[open] summary::after {
+    transform: rotate(-45deg) translate(0%, 0%);
+}
+
+.custom-select-container .custom-select ul {
+    width: 100%;
+    background: white;
+    position: absolute;
+    left: 0;
+    padding: 1rem;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+
+.custom-select-container .custom-select li {
+    margin: 0;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.custom-select-container .custom-select li:hover {
+    margin: 0;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    background-color: #F5F6FD;
+
+}
+
+.custom-select-container .custom-select li:first-child {
+    padding-top: 0;
+}
+
+.custom-select-container .custom-select li:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.custom-select-container .custom-select summary.radios {
+    counter-reset: radios;
+}
+
+.custom-select-container .custom-select summary.radios:before {
+    content: var(--selection);
+}
+
+.custom-select-container .custom-select input[type=radio] {
+    counter-increment: radios;
+    appearance: none;
+    display: none;
+}
+
+.custom-select-container .custom-select input[type=radio]:checked {
+    display: inline;
+    --display: block;
+}
+
+.custom-select-container .custom-select input[type=radio]:after {
+    content: attr(title);
+    display: inline;
+    font-size: 1rem;
+}
+
+.custom-select-container .custom-select label {
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+}
+
+.custom-select-container .custom-select label span {
+    --display: none;
+    display: var(--display);
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid white;
+    border-radius: 3px;
+} */
+
+
+
+

@@ -34,10 +34,10 @@
                                        data-default="{{ json_encode($list_json) }}">
                                 <input type="hidden" class="child_id" name="destination_id" value="{{$row->destination_id ?? Request::query('destination_id')}}">
                                 <div style="display: none">
-                                    <div style="display: none"><strong>Selected Destination:</strong> <span id="selectedDestinationDiv"></span></div>
-                                    <div style="display: none"><strong>Selected Destination ID:</strong> <span id="selectedDestinationIdDiv"></span></div>
-                                    <div style="display: none"><strong>Selected Destination Map Latitude:</strong> <span id="selectedDestinationMapLatDiv"></span></div>
-                                    <div style="display: none"><strong>Selected Destination Map Longitude:</strong> <span id="selectedDestinationMapLngDiv"></span></div>
+                                    <div><strong>Selected Destination:</strong> <span id="selectedDestinationDiv"></span></div>
+                                    <div><strong>Selected Destination ID:</strong> <span id="selectedDestinationIdDiv"></span></div>
+                                    <div><strong>Selected Destination Map Latitude:</strong> <span id="selectedDestinationMapLatDiv"></span></div>
+                                    <div><strong>Selected Destination Map Longitude:</strong> <span id="selectedDestinationMapLngDiv"></span></div>
                                 </div>
                             </div>
                         </div>
@@ -73,10 +73,10 @@
                             ?>
                         </select>
                         <div style="display: none">
-                            <div style="display: none"><strong>Selected Destination:</strong> <span id="selectedDestinationDiv"></span></div>
-                            <div style="display: none"><strong>Selected Destination ID:</strong> <span id="selectedDestinationIdDiv"></span></div>
-                            <div style="display: none"><strong>Selected Destination Map Latitude:</strong> <span id="selectedDestinationMapLatDiv"></span></div>
-                            <div style="display: none"><strong>Selected Destination Map Longitude:</strong> <span id="selectedDestinationMapLngDiv"></span></div>
+                            <div><strong>Selected Destination:</strong> <span id="selectedDestinationDiv"></span></div>
+                            <div><strong>Selected Destination ID:</strong> <span id="selectedDestinationIdDiv"></span></div>
+                            <div><strong>Selected Destination Map Latitude:</strong> <span id="selectedDestinationMapLatDiv"></span></div>
+                            <div><strong>Selected Destination Map Longitude:</strong> <span id="selectedDestinationMapLngDiv"></span></div>
                         </div>
                     </div>
                 @endif
