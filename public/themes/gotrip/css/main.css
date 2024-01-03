@@ -3559,6 +3559,11 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 1;
     pointer-events: auto;
   }
+
+  .header .header-menu .menu li a {
+    transform: translate(0px, 0%)!important;
+}
+
   .header .header-menu .menu li.-has-mega-menu:hover > .mega {
     opacity: 1 !important;
     pointer-events: auto !important;
