@@ -7,7 +7,7 @@
     <li class="language-dropdown menu-item-has-children">
         @foreach($languages as $language)
             @if($locale == $language->locale)
-                <a href="#" class="is_login">
+                <a href="#" class="is_login" style="transform: translate(0px, 0%);">
                     <span class="mr-10">
                         @if($language->flag)
                             <span class="flag-icon flag-icon-{{$language->flag}}"></span>
@@ -22,7 +22,7 @@
             @foreach($languages as $language)
                 @if($locale != $language->locale)
                     <li>
-                        <a href="{{get_lang_switcher_url($language->locale)}}" class="is_login dropdown-item" style="justify-content: flex-start">
+                        <a href="{{get_lang_switcher_url($language->locale)}}" class="is_login dropdown-item" style="justify-content: flex-start;transform: translate(0px, 0%);">
                             @if($language->flag)
                                 <span class="flag-icon flag-icon-{{$language->flag}}"></span>
                             @endif
