@@ -21,6 +21,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Car\Models\CarTranslation;
 use Modules\User\Models\UserWishList;
 use Modules\Location\Models\Location;
+use Carbon\Carbon;
 
 class Car extends Bookable
 {
@@ -261,6 +262,9 @@ class Car extends Bookable
         $booking->total_guests = 1;
         $booking->start_date = $start_date->format('Y-m-d H:i:s');
         $booking->end_date = $end_date->format('Y-m-d H:i:s');
+        $pickupTime = Carbon::createFromFormat('H:i', $request->input('pickup_time'));
+        $booking->pickup_time = $pickupTime->format('h:i A');
+        // $booking->pickup_time = $request->input('pickup_time')->format('h:i K');
 
         $booking->vendor_service_fee_amount = $total_service_fee ?? '';
         $booking->vendor_service_fee = $list_service_fee ?? '';

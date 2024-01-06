@@ -54,6 +54,12 @@
                             {{$booking->duration_days}}
                         </div>
                     </li>
+                    <li>
+                        <div class="label">{{__('Pickup Time:')}}</div>
+                        <div class="val">
+                            {{ $booking->pickup_time ? $booking->pickup_time : 'No Pickup Time' }}
+                        </div>
+                    </li>
                 @endif
                 @if($meta = $booking->number)
                     <li>

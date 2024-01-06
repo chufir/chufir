@@ -1,3 +1,4 @@
+
 @php $review_score = $row->review_data @endphp
 <div class="bravo_single_book_wrap d-flex justify-end">
     <div class="bravo_single_book">
@@ -76,6 +77,71 @@
                                 <input type="text" class="start_date" ref="start_date" style="height: 1px;visibility: hidden;position: absolute;left: 0;">
                             </div>
                         </div>
+
+                        <!-- Pickup Time -->
+                        <div class="col-12">
+                            <div class="form-group form-date-field form-date-search clearfix px-20 py-10 border-light rounded-4 -right position-relative">
+                                {{-- <div class="date-wrapper clearfix" @click="openStartDate">
+                                    <div class="check-in-wrapper">
+                                        <h4 class="text-15 fw-500 ls-2 lh-16">{{__("Pickup Time")}}</h4>
+                                        <div class="render check-in-render" v-html="start_date_html"></div>
+                                        @if(!empty($row->min_day_before_booking))
+                                            <div class="render check-in-render">
+                                                <small>
+                                                    @if($row->min_day_before_booking > 1)
+                                                        - {{ __("Book :number days in advance",["number"=>$row->min_day_before_booking]) }}
+                                                    @else
+                                                        - {{ __("Book :number day in advance",["number"=>$row->min_day_before_booking]) }}
+                                                    @endif
+                                                </small>
+                                            </div>
+                                        @endif
+                                        @if(!empty($row->min_day_stays))
+                                            <div class="render check-in-render">
+                                                <small>
+                                                    @if($row->min_day_stays > 1)
+                                                        - {{ __("Stay at least :number days",["number"=>$row->min_day_stays]) }}
+                                                    @else
+                                                        - {{ __("Stay at least :number day",["number"=>$row->min_day_stays]) }}
+                                                    @endif
+                                                </small>
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div> --}}
+                                <!--Time picker -->
+
+                                {{-- <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                    <label class="control-label" for="timepicker">Select Time</label>
+                                    <input type="text" class="form-control" id="timepicker">
+                                </div> --}}
+
+                                {{-- <div class="cs-form"> --}}
+
+
+
+                                    <h4 class="text-15 fw-500 ls-2 lh-16">{{ __('Pickup Time') }}</h4>
+                                    <input type="time" name="pickup_time" ref="pickup_time" v-model="pickup_time" id="pickup_time" class="form-control" />
+
+
+                                    {{-- <div class="form-group">
+                                        <label for="pickup_time" class="text-15 fw-500 ls-2 lh-16">{{ __('Pickup Time') }}</label>
+                                        <div class="input-group">
+                                          <input type="text" id="pickup_time" name="pickup_time" class="form-control" />
+                                          <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fas fa-clock"></i></span>
+                                          </div>
+                                        </div>
+                                      </div> --}}
+
+
+                                  {{-- </div> --}}
+
+                                {{-- <input type="text" class="start_date" ref="start_date" style="height: 1px;visibility: hidden;position: absolute;left: 0;"> --}}
+                            </div>
+                        </div>
+
+
                         <div class="col-12">
                             <div class="searchMenu-guests px-20 py-10 border-light rounded-4 js-form-dd">
                                 <div data-x-dd-click="searchMenu-guests">

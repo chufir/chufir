@@ -14,6 +14,7 @@
             start_date:'',
             end_date:'',
             start_date_html:'',
+            pickup_time:'',
 
             step:1,
             start_date_obj:'',
@@ -39,6 +40,9 @@
                 deep:true
             },
             start_date(){
+                this.step = 1;
+            },
+            pickup_time() {
                 this.step = 1;
             },
             number:function () {
@@ -341,6 +345,7 @@
                         service_type:"car",
                         start_date:this.start_date,
                         end_date:this.end_date,
+                        pickup_time: this.pickup_time,
                         extra_price:this.extra_price,
                         number:this.number,
                     },
@@ -394,6 +399,7 @@
                         }
                     }
                 })
+                console.log("Pickup Time: ", this.pickup_time);
             },
             doEnquirySubmit:function(e){
                 e.preventDefault();
