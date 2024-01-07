@@ -4025,7 +4025,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mainSearch.-w-1070 {
-  width: 1070px;
+  /* width: 1070px; */
+  width: 1210px;
   max-width: 100%;
 }
 

@@ -43,7 +43,7 @@ $value = '';
 <!-------------- The design like the theme -------------->
 <div class="searchMenu-loc js-form-dd item">
     <span class="clear-loc absolute bottom-0 text-12"><i class="icon-close"></i></span>
-    <div data-x-dd-click="searchMenu-loc">
+    <div data-x-dd-click="searchMenu-loc" class="CarType">
         <h4 class="text-15 fw-500 ls-2 lh-16">{{ $field['title'] }}</h4>
         <div class="text-15 text-light-1 ls-2 lh-16  @if( $type == "autocomplete") smart-search  @endif ">
             <input type="hidden" name="car_type" value="{{ $selectedValue }}" id="valueSent" class="js-search-get-id">
@@ -83,13 +83,15 @@ $value = '';
 {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> --}}
 <script>
     function selectOption(value, label) {
-            // console.log('selectOption function called');
-            // console.log('Selected value:', value);
-            // console.log('Selected label:', label);
 
-            // Set the selected value in the input field
         document.getElementById('valueSent').value = value;
         document.querySelector('.smart-search-car_type').value = label;
+
+        const dropdownToggle = document.querySelector('[class="CarType"]');
+if (dropdownToggle) {
+    dropdownToggle.click();
+}
+
         }
 </script>
 

@@ -28,7 +28,7 @@ $type = $search_style ?? "normal";
             <input type="hidden" name="{{ $inputName }}" class="js-search-get-id" value="{{ $location_id ?? '' }}">
             <input type="text" autocomplete="on"
              {{-- @if( $type == "normal") readonly  @endif --}}
-             class="smart-search-location parent_text js-search js-dd-focus" placeholder="{{__("Where are you going?")}}" value="{{ $location_name }}" data-onLoad="{{__("Loading...")}}" data-default="{{ json_encode($list_json) }}">
+             class="smart-search-location parent_text js-search js-dd-focus" placeholder="{{__("Enter Pickup Point")}}" value="{{ $location_name }}" data-onLoad="{{__("Loading...")}}" data-default="{{ json_encode($list_json) }}">
         </div>
     </div>
     <div class="searchMenu-loc__field shadow-2 js-popup-window  @if($type!='normal') d-none @endif" style="max-height: 300px;
