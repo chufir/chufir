@@ -87,30 +87,30 @@ class ModuleProvider extends ModuleServiceProvider
         $count = PlanPayment::query()->where('object_model','plan')->where('status','processing')->count();
         return [
             'users'=> $options,
-            'plan'=>[
-                "position"=>50,
-                'url'        => route('user.admin.plan.index'),
-                'title'      => __('User Plans :count',['count'=>$count ? sprintf('<span class="badge badge-warning">%d</span>',$count) : '']),
-                'icon'       => 'fa fa-list-alt',
-                'permission' => 'role_view',
-                'children'   => [
-                    'user-plan'=>[
-                        'url'   => route('user.admin.plan.index'),
-                        'title' => __('User Plans'),
-                        'permission' => 'role_view',
-                    ],
-                    'plan-report'=>[
-                        'url'        => route('user.admin.plan_report.index'),
-                        'title'      => __('Plan Report'),
-                        'permission' => 'role_view',
-                    ],
-                    'plan-request'=>[
-                        'url'        => route('user.admin.plan_request.index'),
-                        'title'      => __('Plan Request :count',['count'=>$count ? sprintf('<span class="badge badge-warning">%d</span>',$count) : '']),
-                        'permission' => 'role_view',
-                    ],
-                ]
-            ]
+            // 'plan'=>[
+            //     "position"=>50,
+            //     'url'        => route('user.admin.plan.index'),
+            //     'title'      => __('User Plans :count',['count'=>$count ? sprintf('<span class="badge badge-warning">%d</span>',$count) : '']),
+            //     'icon'       => 'fa fa-list-alt',
+            //     'permission' => 'role_view',
+            //     'children'   => [
+            //         'user-plan'=>[
+            //             'url'   => route('user.admin.plan.index'),
+            //             'title' => __('User Plans'),
+            //             'permission' => 'role_view',
+            //         ],
+            //         'plan-report'=>[
+            //             'url'        => route('user.admin.plan_report.index'),
+            //             'title'      => __('Plan Report'),
+            //             'permission' => 'role_view',
+            //         ],
+            //         'plan-request'=>[
+            //             'url'        => route('user.admin.plan_request.index'),
+            //             'title'      => __('Plan Request :count',['count'=>$count ? sprintf('<span class="badge badge-warning">%d</span>',$count) : '']),
+            //             'permission' => 'role_view',
+            //         ],
+            //     ]
+            // ]
         ];
     }
     public static function getUserMenu()
@@ -162,15 +162,15 @@ class ModuleProvider extends ModuleServiceProvider
             ];
         }
 
-        if(is_enable_plan())
-        $res['my_plan'] = [
-            'url' => 'user/my-plan',
-            'title' => __("My Plans"),
-            'icon' => 'fa fa-list-alt',
-            'permission' => 'dashboard_vendor_access',
-            'enable' => true,
-            'position' => 95,
-        ];
+        // if(is_enable_plan())
+        // $res['my_plan'] = [
+        //     'url' => 'user/my-plan',
+        //     'title' => __("My Plans"),
+        //     'icon' => 'fa fa-list-alt',
+        //     'permission' => 'dashboard_vendor_access',
+        //     'enable' => true,
+        //     'position' => 95,
+        // ];
 
         return $res;
     }

@@ -1,6 +1,8 @@
 <?php
 if(!auth()->check()) return;
 [$notifications,$countUnread] = getNotify();
+$locale = App::getLocale();
+// dd($locale);
 ?>
 
 <div class="dropdown-notifications dropdown p-0 js-form-dd">
@@ -8,7 +10,8 @@ if(!auth()->check()) return;
         <i class="icon-notification text-20"></i>
         <span class="badge badge-danger notification-icon">{{$countUnread}}</span>
     </button>
-    <ul class="dropdown-menu overflow-auto notify-items dropdown-container dropdown-menu-right dropdown-large" data-x-dd="user-notifications" data-x-dd-toggle="-is-active">
+    {{-- <ul class="dropdown-menu overflow-auto notify-items dropdown-container dropdown-menu-right dropdown-large" data-x-dd="user-notifications" data-x-dd-toggle="-is-active"> --}}
+    <ul class="dropdown-menu overflow-auto notify-items dropdown-container @if(in_array($locale, ['ar', 'en'])) dropdown-menu-{{ in_array($locale, ['ar']) ? 'right' : 'left' }} @endif dropdown-large" data-x-dd="user-notifications" data-x-dd-toggle="-is-active">
         <div class="dropdown-toolbar">
             <div class="dropdown-toolbar-actions">
                 <a href="#" class="markAllAsRead">{{__('Mark all as read')}}</a>

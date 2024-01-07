@@ -43,73 +43,73 @@ class ModuleProvider extends ModuleServiceProvider
         ];
     }
 
-    public static function getAdminMenu()
-    {
-        $res = [];
-        if (Agency::isEnable()) {
-            $res['agencies'] = [
-                "position"   => 45,
-                'url'        => 'admin/module/agencies',
-                'title'      => __("Agencies"),
-                'icon'       => 'icon ion-md-umbrella',
-                'permission' => 'agencies_view',
-                'children'   => [
-                    'agency_view'=>[
-                        'url'        => 'admin/module/agencies',
-                        'title'      => __('All Agency'),
-                        'permission' => 'agencies_view',
-                    ],
-                    'agency_create'=>[
-                        'url'        => 'admin/module/agencies/form',
-                        'title'      => __("Add Agency"),
-                        'permission' => 'agencies_create',
-                    ],
-                ],
-            ];
-        }
-        return $res;
-    }
+    // public static function getAdminMenu()
+    // {
+    //     $res = [];
+    //     if (Agency::isEnable()) {
+    //         $res['agencies'] = [
+    //             "position"   => 45,
+    //             'url'        => 'admin/module/agencies',
+    //             'title'      => __("Agencies"),
+    //             'icon'       => 'icon ion-md-umbrella',
+    //             'permission' => 'agencies_view',
+    //             'children'   => [
+    //                 'agency_view'=>[
+    //                     'url'        => 'admin/module/agencies',
+    //                     'title'      => __('All Agency'),
+    //                     'permission' => 'agencies_view',
+    //                 ],
+    //                 'agency_create'=>[
+    //                     'url'        => 'admin/module/agencies/form',
+    //                     'title'      => __("Add Agency"),
+    //                     'permission' => 'agencies_create',
+    //                 ],
+    //             ],
+    //         ];
+    //     }
+    //     return $res;
+    // }
 
 
-    public static function getUserMenu()
-    {
-        $res = [];
-        if(is_agency_owner()){
-            if(Agency::isEnable()){
-                $res['agencies'] = [
-                    'title'      => __("Manage Agency"),
-                    'icon'       => 'icon ion-md-umbrella',
-                    'permission' => 'agencies_view',
-                    'position'   => 31,
-                    'url'        => route('agency.vendor.index'),
-                ];
-            }
-        }
+    // public static function getUserMenu()
+    // {
+    //     $res = [];
+    //     if(is_agency_owner()){
+    //         if(Agency::isEnable()){
+    //             $res['agencies'] = [
+    //                 'title'      => __("Manage Agency"),
+    //                 'icon'       => 'icon ion-md-umbrella',
+    //                 'permission' => 'agencies_view',
+    //                 'position'   => 31,
+    //                 'url'        => route('agency.vendor.index'),
+    //             ];
+    //         }
+    //     }
 
-        return $res;
-    }
+    //     return $res;
+    // }
 
-    public static function getMenuBuilderTypes()
-    {
-        if(!Agency::isEnable()) return [];
+    // public static function getMenuBuilderTypes()
+    // {
+    //     if(!Agency::isEnable()) return [];
 
-        return [
-            [
-                'class' => Agency::class,
-                'name'  => __("Agencies"),
-                'items' => Agency::searchForMenu(),
-                'position'=> 20
-            ],
-        ];
-    }
+    //     return [
+    //         [
+    //             'class' => Agency::class,
+    //             'name'  => __("Agencies"),
+    //             'items' => Agency::searchForMenu(),
+    //             'position'=> 20
+    //         ],
+    //     ];
+    // }
 
-    public static function getTemplateBlocks(){
-        if(!Agency::isEnable()) return [];
+    // public static function getTemplateBlocks(){
+    //     if(!Agency::isEnable()) return [];
 
-        return [
-            'our_team'=>OurTeam::class,
-            'partners'=>Partners::class,
-            'vendor_register_form'=>VendorRegisterForm::class
-        ];
-    }
+    //     return [
+    //         'our_team'=>OurTeam::class,
+    //         'partners'=>Partners::class,
+    //         'vendor_register_form'=>VendorRegisterForm::class
+    //     ];
+    // }
 }

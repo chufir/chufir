@@ -161,11 +161,11 @@ if (!empty($menus))
             <p>{{ __("Member Since :time",["time"=> date("M Y",strtotime($dataUser->created_at))]) }}</p>
         </div>
     </div>
-    <div class="user-profile-plan">
+    {{-- <div class="user-profile-plan">
         @if( !Auth::user()->hasPermission("dashboard_vendor_access") and setting_item('vendor_enable'))
             <a href=" {{ route("user.upgrade_vendor") }}">{{ __("Become a vendor") }}</a>
         @endif
-    </div>
+    </div> --}}
     <div class="sidebar-menu">
         <ul class="main-menu">
             @foreach($menus as $menuItem)

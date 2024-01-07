@@ -14,12 +14,12 @@ $menus = [
         'icon'     => 'fa fa-clock-o',
         'position' => 20
     ],
-    "wishlist"=>[
-        'url'   => route("user.wishList.index"),
-        'title' => __("Wishlist"),
-        'icon'  => 'fa fa-heart-o',
-        'position' => 21
-    ],
+    // "wishlist"=>[
+    //     'url'   => route("user.wishList.index"),
+    //     'title' => __("Wishlist"),
+    //     'icon'  => 'fa fa-heart-o',
+    //     'position' => 21
+    // ],
     'profile'         => [
         'url'      => route("user.profile.index"),
         'title'    => __("My Profile"),
@@ -162,11 +162,11 @@ if (!empty($menus))
                 <p class="text-10 mb-0">{{ __("Member Since :time",["time"=> date("M Y",strtotime($dataUser->created_at))]) }}</p>
             </div>
         </div>
-        @if(!Auth::user()->hasPermission("dashboard_vendor_access") and setting_item('vendor_enable'))
+        {{-- @if(!Auth::user()->hasPermission("dashboard_vendor_access") and setting_item('vendor_enable'))
         <div class="user__profile-plan mt-10 text-center">
             <a class="become-vendor button -sm -dark-1 bg-blue-1 text-white" href="{{ route("user.upgrade_vendor") }}">{{ __("Become a vendor") }}</a>
         </div>
-        @endif
+        @endif --}}
     </div>
 
     <div class="sidebar -dashboard">

@@ -22,19 +22,19 @@ class ModuleProvider extends ModuleServiceProvider
         $this->app->register(EventServiceProvider::class);
     }
 
-    public static function getAdminMenu()
-    {
-        $count = VendorPayout::countInitial();
-        return [
-            'payout'=>[
-                "position"=>70,
-                'url'        => route('vendor.admin.payout.index'),
-                'title'      => __("Payouts :count",['count'=>$count ? sprintf('<span class="badge badge-warning">%d</span>',$count) : '']),
-                'icon'       => 'icon ion-md-card',
-                'permission' => 'user_create',
-            ]
-        ];
-    }
+    // public static function getAdminMenu()
+    // {
+    //     $count = VendorPayout::countInitial();
+    //     return [
+    //         'payout'=>[
+    //             "position"=>70,
+    //             'url'        => route('vendor.admin.payout.index'),
+    //             'title'      => __("Payouts :count",['count'=>$count ? sprintf('<span class="badge badge-warning">%d</span>',$count) : '']),
+    //             'icon'       => 'icon ion-md-card',
+    //             'permission' => 'user_create',
+    //         ]
+    //     ];
+    // }
 
 
     public static function getTemplateBlocks(){

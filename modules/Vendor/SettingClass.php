@@ -45,7 +45,7 @@
                     'filter_values_callback'=>[SettingClass::class,'filterValuesBeforeSaving']
                 ]
             ];
-            return apply_filters(Hook::VENDOR_SETTING_CONFIG,$configs);
+            // return apply_filters(Hook::VENDOR_SETTING_CONFIG,$configs);
         }
 
         public static function filterValuesBeforeSaving($setting_values, Request $request)

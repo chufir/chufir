@@ -8,8 +8,8 @@ use Themes\GoTrip\Database\Seeders\DatabaseSeederForReImport;
 
 class ThemeProvider extends \Themes\Base\ThemeProvider
 {
-    public static $version = '1.4.0';
-    public static $name = 'Go Trip';
+    public static $version = '';
+    public static $name = 'Chufir';
     public static $parent = 'base';
 
     public static $seeder = DatabaseSeeder::class;

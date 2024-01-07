@@ -20,16 +20,16 @@ class ModuleProvider extends ModuleServiceProvider
         $this->app->register(RouterServiceProvider::class);
     }
 
-    public static function getAdminMenu()
-    {
-        return [
-            'review'=>[
-                "position"=>55,
-                'url'   => route('review.admin.index'),
-                'title' => __("Reviews"),
-                'icon'  => 'icon ion-ios-text',
-                'permission' => 'review_manage_others',
-            ],
-        ];
-    }
+    // public static function getAdminMenu()
+    // {
+    //     return [
+    //         'review'=>[
+    //             "position"=>55,
+    //             'url'   => route('review.admin.index'),
+    //             'title' => __("Reviews"),
+    //             'icon'  => 'icon ion-ios-text',
+    //             'permission' => 'review_manage_others',
+    //         ],
+    //     ];
+    // }
 }

@@ -47,39 +47,39 @@ class SettingClass extends BaseSettingsClass
 
                 ]
             ],
-            [
-                'id'   => 'user_plans',
-                'title' => __("User Plans Settings"),
-                'position'=>51,
-                'view'=>"User::admin.settings.plan",
-                "keys"=>[
-                    'user_plans_enable',
+            // [
+            //     'id'   => 'user_plans',
+            //     'title' => __("User Plans Settings"),
+            //     'position'=>51,
+            //     'view'=>"User::admin.settings.plan",
+            //     "keys"=>[
+            //         'user_plans_enable',
 
-                    'user_plans_page_title',
-                    'user_plans_page_sub_title',
-                    'user_plans_sale_text',
-                    'enable_multi_user_plans',
+            //         'user_plans_page_title',
+            //         'user_plans_page_sub_title',
+            //         'user_plans_sale_text',
+            //         'enable_multi_user_plans',
 
-                    'plan_new_payment_admin_enable',
-                    'plan_new_payment_admin_subject',
-                    'plan_new_payment_admin_content',
+            //         'plan_new_payment_admin_enable',
+            //         'plan_new_payment_admin_subject',
+            //         'plan_new_payment_admin_content',
 
-                    'plan_update_payment_admin_enable',
-                    'plan_update_payment_admin_subject',
-                    'plan_update_payment_admin_content',
+            //         'plan_update_payment_admin_enable',
+            //         'plan_update_payment_admin_subject',
+            //         'plan_update_payment_admin_content',
 
-                    'plan_new_payment_user_enable',
-                    'plan_new_payment_user_subject',
-                    'plan_new_payment_user_content',
+            //         'plan_new_payment_user_enable',
+            //         'plan_new_payment_user_subject',
+            //         'plan_new_payment_user_content',
 
-                    'plan_update_payment_user_enable',
-                    'plan_update_payment_user_subject',
-                    'plan_update_payment_user_content',
-                ],
-                'html_keys'=>[
+            //         'plan_update_payment_user_enable',
+            //         'plan_update_payment_user_subject',
+            //         'plan_update_payment_user_content',
+            //     ],
+            //     'html_keys'=>[
 
-                ]
-            ],
+            //     ]
+            // ],
             [
                 'id'   => 'user_wallet',
                 'title' => __("User wallet Settings"),

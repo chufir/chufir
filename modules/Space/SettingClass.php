@@ -66,6 +66,6 @@ class SettingClass extends BaseSettingsClass
                 ]
             ]
         ];
-        return apply_filters(Hook::SPACE_SETTING_CONFIG,$configs);
+        // return apply_filters(Hook::SPACE_SETTING_CONFIG,$configs);
     }
 }
