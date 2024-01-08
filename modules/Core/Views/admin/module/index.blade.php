@@ -12,8 +12,8 @@
                         {{csrf_field()}}
                         <select name="action" class="form-control">
                             <option value="">{{__(" Bulk Actions ")}}</option>
-                            {{--<option value="active">{{__("Active")}}</option>
-                            <option value="deactivate">{{__("Deactivate")}}</option>--}}
+                            <option value="active">{{__("Active")}}</option>
+                            <option value="deactivate">{{__("Deactivate")}}</option>
                         </select>
                         <button class="btn-info btn btn-icon dungdt-apply-form-btn" type="button">{{__('Apply')}}</button>
                     </form>
