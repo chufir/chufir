@@ -25,12 +25,12 @@ class ModuleProvider extends \Modules\ModuleServiceProvider
                 'icon'       => 'icon ion-ios-pie',
                 'permission' => 'report_view',
                 'children'   => [
-                    'enquiry'=>[
-                        'url'        => route('report.admin.enquiry.index'),
-                        'title'      => __('Enquiry Reports'),
-                        'icon'       => 'icon ion-ios-pricetags',
-                        'permission' => 'report_view',
-                    ],
+                    // 'enquiry'=>[
+                    //     'url'        => route('report.admin.enquiry.index'),
+                    //     'title'      => __('Enquiry Reports'),
+                    //     'icon'       => 'icon ion-ios-pricetags',
+                    //     'permission' => 'report_view',
+                    // ],
                     'booking'=>[
                         'url'        => route('report.admin.booking'),
                         'title'      => __('Booking Reports'),

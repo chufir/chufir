@@ -33,14 +33,14 @@
                     </div>
                 @endif
             </div>
-            <div class="nav-enquiry" v-if="is_form_enquiry_and_book">
+            {{-- <div class="nav-enquiry" v-if="is_form_enquiry_and_book">
                 <div class="enquiry-item active" >
                     <span>{{ __("Book") }}</span>
                 </div>
                 <div class="enquiry-item" data-toggle="modal" data-target="#enquiry_form_modal">
                     <span>{{ __("Enquiry") }}</span>
                 </div>
-            </div>
+            </div> --}}
             <div class="form-book" :class="{'d-none':enquiry_type!='book'}">
                 <div class="form-content">
                     <div class="row y-gap-20 pt-20">

@@ -228,6 +228,7 @@ function display_date($time){
     if($time){
         if(is_string($time)){
             $time = strtotime($time);
+            $time = date('Y-m-d', $time);
         }
 
         if(is_object($time)){
