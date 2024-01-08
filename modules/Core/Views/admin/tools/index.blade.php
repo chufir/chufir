@@ -63,7 +63,7 @@
                                     </div>
                                 </div>
                             @endif
-                            @if($user->hasPermission('system_log_view'))
+                            {{-- @if($user->hasPermission('system_log_view')) --}}
                                 @php $hasAvailableTools = true; @endphp
                                 <div class="col-md-4">
                                     <div class="area-setting-item">
@@ -78,8 +78,8 @@
                                         </a>
                                     </div>
                                 </div>
-                            @endif
-                            @if($user->hasPermission('system_log_view'))
+                            {{-- @endif --}}
+                            {{-- @if($user->hasPermission('system_log_view')) --}}
                                 @php $hasAvailableTools = true; @endphp
                                 <div class="col-md-4 d-none">
                                     <div class="area-setting-item">
@@ -94,7 +94,7 @@
                                         </a>
                                     </div>
                                 </div>
-                            @endif
+                            {{-- @endif --}}
                                 <div class="col-md-4">
                                     <div class="area-setting-item">
                                         <a class="setting-item-link" href="{{route('core.tool.clearCache')}}">
