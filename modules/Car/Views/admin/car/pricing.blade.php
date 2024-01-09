@@ -23,7 +23,7 @@
                         <div><strong>Selected Destination Map Longitude :</strong> <span id="selectedDestinationMapLngInPricing"></span></div>
 
                     </div>
-                    <div class="pb-3"><strong>Distance:</strong> <span id="distanceDisplay"></span></div>
+                    <div class="pb-3"><strong>{{__("Distance:")}}</strong> <span id="distanceDisplay"></span></div>
                 </div>
 
                 <!-- Add this new field where you want to display the Price per km -->
