@@ -12,7 +12,7 @@
                         <span class="text-20 fw-500 text-dark-1">{{ $row->display_price }}</span>
                     </div>
                 </div>
-                @if($review_score)
+                {{-- @if($review_score)
                     <div class="col-auto">
                         <div class="d-flex items-center">
                             <div class="text-14 text-right mr-10">
@@ -31,7 +31,7 @@
                             </div>
                         </div>
                     </div>
-                @endif
+                @endif --}}
             </div>
             {{-- <div class="nav-enquiry" v-if="is_form_enquiry_and_book">
                 <div class="enquiry-item active" >
@@ -145,7 +145,7 @@
                         <div class="col-12">
                             <div class="searchMenu-guests px-20 py-10 border-light rounded-4 js-form-dd">
                                 <div data-x-dd-click="searchMenu-guests">
-                                    <h4 class="text-15 fw-500 ls-2 lh-16">{{ __('Select Number') }}</h4>
+                                    <h4 class="text-15 fw-500 ls-2 lh-16">{{ __('Passengers Number') }}</h4>
                                     <div class="text-15 text-light-1 ls-2 lh-16">
                                         <span class="js-count-adult">@{{ number }}</span>
                                     </div>
