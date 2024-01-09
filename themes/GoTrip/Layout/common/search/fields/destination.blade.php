@@ -18,7 +18,7 @@ if (empty($inputName)){
     $inputName = 'destination_id';
 }
 $type = $search_style ?? "normal";
-// $type = "autocomplete";
+$type = "autocomplete";
 ?>
 <div class="searchMenu-loc js-form-dd js-liverSearch item">
     <span class="clear-loc absolute bottom-0 text-12"><i class="icon-close"></i></span>
