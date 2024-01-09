@@ -350,9 +350,9 @@ class Car extends Bookable
         }
 
         // Validate Date and Booking
-        if(!$this->isAvailableInRanges($start_date,$end_date,$total_number)){
-            return $this->sendError(__("This car is not available at selected dates"));
-        }
+        // if(!$this->isAvailableInRanges($start_date,$end_date,$total_number)){
+        //     return $this->sendError(__("This car is not available at selected dates"));
+        // }
 
         $numberDays = ( abs(strtotime($end_date) - strtotime($start_date)) / 86400 ) + 1;
         if(!empty($this->min_day_stays) and  $numberDays < $this->min_day_stays){
@@ -369,12 +369,12 @@ class Car extends Bookable
         return true;
     }
 
-    public function beforeCheckout(Request $request, $booking)
-    {
-        if(!$this->isAvailableInRanges($booking->start_date,$booking->end_date,$booking->number)){
-            return $this->sendError(__("This car is not available at selected dates"));
-        }
-    }
+    // public function beforeCheckout(Request $request, $booking)
+    // {
+    //     if(!$this->isAvailableInRanges($booking->start_date,$booking->end_date,$booking->number)){
+    //         return $this->sendError(__("This car is not available at selected dates"));
+    //     }
+    // }
 
     public function isAvailableInRanges($start_date,$end_date,$number = 1){
 

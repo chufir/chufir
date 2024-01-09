@@ -1,16 +1,16 @@
 <?php  $languages = \Modules\Language\Models\Language::getActive();  ?>
-@if(is_default_lang())
+{{-- @if(is_default_lang()) --}}
 <div class="panel">
     <div class="panel-title"><strong>{{__("Pricing")}}</strong></div>
     <div class="panel-body">
-        @if(is_default_lang())
+        {{-- @if(is_default_lang()) --}}
             <div class="row">
-                <div class="col-lg-12">
+                {{-- <div class="col-lg-12">
                     <div class="form-group">
                         <label class="control-label">{{__("Number")}}</label>
                         <input type="number" step="any" min="0" name="number" class="form-control" value="{{$row->number}}" placeholder="{{__("Car Number")}}">
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="col-lg-12">
                     <div class="form-group" style="display: none">
@@ -23,7 +23,7 @@
                         <div><strong>Selected Destination Map Longitude :</strong> <span id="selectedDestinationMapLngInPricing"></span></div>
 
                     </div>
-                    <div><strong>Distance:</strong> <span id="distanceDisplay"></span></div>
+                    <div class="pb-3"><strong>Distance:</strong> <span id="distanceDisplay"></span></div>
                 </div>
 
                 <!-- Add this new field where you want to display the Price per km -->
@@ -51,8 +51,8 @@
                 </div>
 
             </div>
-        @endif
-        @if(is_default_lang())
+        {{-- @endif --}}
+        {{-- @if(is_default_lang())
             <div class="row">
                 <div class="col-lg-6">
                     <div class="form-group">
@@ -69,7 +69,7 @@
                     </div>
                 </div>
             </div>
-        @endif
+        @endif --}}
         <div class="form-group @if(!is_default_lang()) d-none @endif">
             <label><input type="checkbox" name="enable_extra_price" @if(!empty($row->enable_extra_price)) checked @endif value="1"> {{__('Enable extra price')}}
             </label>
@@ -269,7 +269,7 @@
         @endif
     </div>
 </div>
-@endif
+{{-- @endif --}}
 <?php do_action(\Modules\Car\Hook::FORM_AFTER_SERVICE_FEE,$row) ?>
 
 

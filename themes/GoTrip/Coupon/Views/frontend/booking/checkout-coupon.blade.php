@@ -1,4 +1,4 @@
-<li class="d-flex flex-column border-0 mb-0">
+{{-- <li class="d-flex flex-column border-0 mb-0">
     <div class="text-20 fw-500 mb-15">{{__('Do you have a promo code?')}}</div>
     <div class="section-coupon-form">
         @if(in_array($booking->status , ['draft']))
@@ -34,4 +34,4 @@
         @endif
         <div class="message alert-text mt-2"></div>
     </div>
-</li>
+</li> --}}

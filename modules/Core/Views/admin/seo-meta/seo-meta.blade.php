@@ -7,7 +7,7 @@ if(is_default_lang()){
 
 $seo_share = $meta_seo['seo_share'] ?? false;
 ?>
-<div class="panel">
+{{-- <div class="panel">
     <div class="panel-title"><strong>{{__("Seo Manager")}}</strong></div>
     <div class="panel-body">
         <div class="row">
@@ -85,4 +85,4 @@ $seo_share = $meta_seo['seo_share'] ?? false;
             </div>
         </div>
     </div>
-</div>
+</div> --}}

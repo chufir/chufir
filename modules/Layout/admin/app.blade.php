@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"
+ {{-- dir="{{ app()->isLocale('ar') ? 'rtl' : 'ltr' }}" --}}
+ >
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -160,13 +162,28 @@
     <script src="{{ asset('libs/tinymce/js/tinymce/tinymce.min.js') }}" ></script>
     @stack('css')
 
+    {{-- @push('css')
+    @if(app()->isLocale('ar'))
+        <link rel="stylesheet" href="{{ asset('path/to/rtl.css') }}">
+    @endif
+@endpush --}}
+{{--Custom Style--}}
+{{-- <link href="{{ route('core.style.customCss') }}" rel="stylesheet"> --}}
+
+<!-- Uncomment this one -->
+{{-- @if(setting_item_with_lang('enable_rtl'))
+    <link href="{{ asset('themes/gotrip/dist/frontend/css/rtl.css') }}" rel="stylesheet">
+@endif --}}
+
 </head>
 <body class="{{($enable_multi_lang ?? '') ? 'enable_multi_lang' : '' }} @if(setting_item('site_enable_multi_lang')) site_enable_multi_lang @endif">
 <div id="app">
     <div class="main-header d-flex">
         @include('Layout::admin.parts.header')
     </div>
-    <div class="main-sidebar">
+    <div class="main-sidebar"
+    {{-- @if(app()->isLocale('ar')) style="margin-left: calc(100% - 240px);" @endif --}}
+    >
         @include('Layout::admin.parts.sidebar')
     </div>
     <div class="main-content">

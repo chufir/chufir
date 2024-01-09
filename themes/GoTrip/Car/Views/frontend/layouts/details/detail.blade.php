@@ -7,11 +7,11 @@
                 <div class="row y-gap-20 justify-between items-end">
                     <div class="col-auto">
                         {{-- <h1 class="text-30 sm:text-24 fw-600">{{$translation->title}}</h1> --}}
-                        <h6>Location: {{ $row->location->name }}</h6>
-                        <h6>Destination: {{ $row->destination->name ?? 'No Destination' }}</h6>
+                        <h6>{{ __("Location:") }} {{ $row->location->name }}</h6>
+                        <h6>{{ __("Destination:") }} {{ $row->destination->name ?? 'No Destination' }}</h6>
 
-                        <h1 class="text-30 sm:text-24 fw-600">The car will be similar like this:</h1>
-                        <h6>Car Type: <span style="text-transform: uppercase;">{{ $row->car_type }}</span></h6>
+                        <h1 class="text-30 sm:text-24 fw-600">{{ __("The car will be similar like this:") }}</h1>
+                        <h6>{{ __("Car Type:") }}<span style="text-transform: uppercase;">{{ $row->car_type }}</span></h6>
                         {{-- <div class="row x-gap-10 items-center pt-10">
                             <div class="col-auto">
                                 <div class="d-flex x-gap-5 items-center">

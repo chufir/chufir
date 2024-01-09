@@ -1,7 +1,7 @@
 <div class="panel">
     <div class="panel-title"><strong>{{__("Locations")}}</strong></div>
     <div class="panel-body">
-        @if(is_default_lang())
+        {{-- @if(is_default_lang()) --}}
             <div class="form-group">
                 <label class="control-label">{{__("Location")}}</label>
                 @if(!empty($is_smart_search))
@@ -101,9 +101,9 @@
                     </div>
                 @endif
             </div>
-        @endif
+        {{-- @endif --}}
 
-        {{-- <div style="display: none" class="form-group">
+        <div style="display: none" class="form-group">
             <label class="control-label">{{__("Real address")}}</label>
             <input type="text" name="address" id="customPlaceAddress" class="form-control" placeholder="{{__("Real address")}}" value="{{$translation->address}}">
         </div>
@@ -129,7 +129,7 @@
                     </div>
                 </div>
             </div>
-        @endif --}}
+        @endif
     </div>
 </div>
 

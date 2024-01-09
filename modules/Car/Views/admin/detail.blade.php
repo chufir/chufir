@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         @if(is_default_lang())
-                        <div class="panel">
+                        <div class="panel" style="display: none">
                             <div class="panel-title"><strong>{{__("Author Setting")}}</strong></div>
                             <div class="panel-body">
                                 <div class="form-group">
@@ -98,24 +98,29 @@
                                     <div class="form-group">
                                         <label >{{__('Default State')}}</label>
                                         <br>
-                                        <select name="default_state" class="custom-select">
+                                        {{-- <select name="default_state" class="custom-select">
                                             <option value="">{{__('-- Please select --')}}</option>
-                                            <option value="1" @if(old('default_state',$row->default_state ?? 0) == 1) selected @endif>{{__("Always available")}}</option>
                                             <option value="0" @if(old('default_state',$row->default_state ?? 0) == 0) selected @endif>{{__("Only available on specific dates")}}</option>
+                                            <option value="1" @if(old('default_state',$row->default_state ?? 0) == 1) selected @endif>{{__("Always available")}}</option>
+                                        </select> --}}
+                                        <select name="default_state" class="custom-select">
+                                            <option value="1">{{__('-- Please select --')}}</option>
+                                            <option value="1" @if(old('default_state',$row->default_state ?? 0) == 0) selected @endif>{{__("Only available on specific dates")}}</option>
+                                            <option value="1" @if(old('default_state',$row->default_state ?? 0) == 1) selected @endif>{{__("Always available")}}</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
-                            @include('Car::admin.car.attributes')
-                            @include('Car::admin.car.ical')
-                            <div class="panel">
+                            {{-- @include('Car::admin.car.attributes') --}}
+                            {{-- @include('Car::admin.car.ical') --}}
+                            {{-- <div class="panel">
                                 <div class="panel-title"><strong>{{__('Feature Image')}}</strong></div>
                                 <div class="panel-body">
                                     <div class="form-group">
                                         {!! \Modules\Media\Helpers\FileHelper::fieldUpload('image_id',$row->image_id) !!}
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         @endif
                     </div>
                 </div>

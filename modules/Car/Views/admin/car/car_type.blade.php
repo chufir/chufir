@@ -12,15 +12,17 @@ $seo_share = $meta_seo['seo_share'] ?? false;
     <div class="panel-body">
         <div class="row">
             <div class="col-md-6">
-                <div class="form-group @if(!is_default_lang()) d-none @endif ">
+                <div class="form-group
+                {{-- @if(!is_default_lang()) d-none @endif --}}
+                ">
                     <label class="control-label">
                         {{__("Choose Car Type:")}}
                     </label>
                     <select name="car_type" class="form-control">
                         {{-- <option value="economy" @if(isset($meta_seo['seo_index']) and $meta_seo['seo_index'] == 1) selected @endif>{{__("Economy")}}</option>
                         <option value="vip" @if(isset($meta_seo['seo_index']) and $meta_seo['seo_index'] == 0) selected @endif>{{__("VIP")}}</option> --}}
-                        <option value="economy" >{{__("Economy")}}</option>
-                        <option value="vip" >{{__("VIP")}}</option>
+                        <option value="economy" @if($row->car_type == 'economy') selected @endif>{{ __("Economy") }}</option>
+                        <option value="vip" @if($row->car_type == 'vip') selected @endif>{{ __("VIP") }}</option>
                     </select>
                 </div>
             </div>

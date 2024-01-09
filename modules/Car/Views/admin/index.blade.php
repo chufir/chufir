@@ -64,9 +64,10 @@
                             <th> {{ __('Name')}}</th>
                             <th width="200px"> {{ __('Location')}}</th>
                             <th width="200px"> {{ __('Destination')}}</th>
-                            <th width="130px"> {{ __('Author')}}</th>
+                            {{-- <th width="130px"> {{ __('Author')}}</th> --}}
+                            <th width="130px"> {{ __('Car Type')}}</th>
                             <th width="100px"> {{ __('Status')}}</th>
-                            <th width="100px"> {{ __('Reviews')}}</th>
+                            {{-- <th width="100px"> {{ __('Reviews')}}</th> --}}
                             <th width="100px"> {{ __('Date')}}</th>
                             <th width="100px"></th>
                         </tr>
@@ -86,18 +87,29 @@
                                     <td>{{$row->location->name ?? ''}}</td>
                                     <td>{{$row->destination->name ?? ''}}</td>
                                     <td>
-                                        @if(!empty($row->author))
+                                        {{-- @if(!empty($row->author))
                                             {{$row->author->getDisplayName()}}
                                         @else
                                             {{__("[Author Deleted]")}}
+                                        @endif --}}
+                                        @if(!empty($row->car_type))
+                                            @if($row->car_type == 'economy')
+                                                {{ __("Economy") }}
+                                            @elseif($row->car_type == 'vip')
+                                                {{ __("VIP") }}
+                                            @else
+                                                {{ $row->car_type }}
+                                            @endif
+                                        @else
+                                            {{ __("No Car Type") }}
                                         @endif
                                     </td>
                                     <td><span class="badge badge-{{ $row->status }}">{{ $row->status }}</span></td>
-                                    <td>
+                                    {{-- <td>
                                         <a target="_blank" href="{{ route('review.admin.index',['service_id'=>$row->id]) }}" class="review-count-approved">
                                             {{ $row->getNumberReviewsInService() }}
                                         </a>
-                                    </td>
+                                    </td> --}}
                                     <td>{{ display_date($row->updated_at)}}</td>
                                     <td>
                                         @if(empty($recovery))
